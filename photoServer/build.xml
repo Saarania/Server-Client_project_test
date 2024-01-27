@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Fotak" default="build" basedir=".">
+    <target name="clean">
+        <delete dir="./war/WEB-INF/classes" />
+    </target>
+    <target name="build">
+        <mkdir dir="./war/WEB-INF/classes" />
+        <javac srcdir="./src" destdir="./war/WEB-INF/classes" encoding="utf-8" includeantruntime="false" verbose="false">
+            <classpath>
+                <fileset dir="./war/WEB-INF/compile-libs" includes="**/*.jar" />
+                <fileset dir="./war/WEB-INF/lib" includes="**/*.jar" />
+                <pathelement location="./war/WEB-INF/classes" />
+            </classpath>
+        </javac>
+    </target>
+</project>
